@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Expense Tracker App</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #d0a8e2 0%, #f6a4a4 100%);
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: rgba(200, 150, 240, 0.9);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border-radius: 0.5rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: -5rem;
+            animation: slideUp 1s ease-out;
+        }
+        .expenses-list h2 {
+            color: #fff;
+            background: rgba(200, 150, 240, 0.8);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            animation: bounceIn 1s ease-in-out;
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+        .btn-primary {
+            background-color: #f6a4a4;
+            border-color: #f6a4a4;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #d0a8e2;
+            border-color: #d0a8e2;
+        }
+        .table thead th {
+            background: rgba(200, 150, 240, 0.8);
+            color: white;
+        }
+        .table tfoot td {
+            background: rgba(200, 150, 240, 0.1);
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Budget Boss</h1>
+    </div>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-group">
+                    <label for="category-select">Category:</label>
+                    <select class="form-control" id="category-select">
+                        <option value="Food & Beverage">Food & Beverage</option>
+                        <option value="Rent">Rent</option>
+                        <option value="Transport">Daily Transport</option>
+                        <option value="Relaxing">Relaxing</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Debt Repayment">Debt Repayment</option>
+                        <option value="Taxes">Taxes</option>
+                        <option value="Travel/Vacation">Travel/Vacation</option>
+                        <option value="Emergency Expenses">Emergency Expenses</option>
+                        <option value="Business Expenses">Business Expenses</option>
+                        <option value="Savings and Investments">Savings and Investments</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount-input">Amount:</label>
+                    <input type="number" class="form-control" id="amount-input">
+                </div>
+                <div class="form-group">
+                    <label for="date-input">Date:</label>
+                    <input type="date" class="form-control" id="date-input">
+                </div>
+                <button class="btn btn-primary" id="add-btn">Add</button>
+            </div>
+        </div>
+        <div class="expenses-list mt-4">
+            <h2>List of Your Expenses</h2>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-table-body">
+                    <!-- Table rows here -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total:</td>
+                        <td id="total-amount"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <footer class="footer">
+        <span>Thanks for using. Made with ❤️ by Pragya Singh</span>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script1.js"></script>
+</body>
+</html>
